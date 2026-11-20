@@ -1,0 +1,13 @@
+sample_id,organism,condition
+S01,organism_A,control
+S02,organism_A,control
+S03,organism_A,control
+S04,organism_A,treatment
+S05,organism_A,treatment
+S06,organism_A,treatment
+S07,organism_B,control
+S08,organism_B,control
+S09,organism_B,control
+S10,organism_B,treatment
+S11,organism_B,treatment
+S12,organism_B,treatment

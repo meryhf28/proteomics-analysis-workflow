@@ -1,0 +1,33 @@
+name: R CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  synthetic-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+      - name: Install dependencies
+        run: |
+          Rscript -e 'install.packages("BiocManager", repos="https://cloud.r-project.org")'
+          Rscript -e 'BiocManager::install("limma", ask=FALSE, update=FALSE)'
+          Rscript -e 'source("scripts/install_dependencies.R")'
+      - name: Run core tests
+        run: Rscript tests/run_tests.R
+      - name: Run annotation tests
+        run: Rscript tests/run_annotation_tests.R
+      - name: Run visualization tests
+        run: Rscript tests/run_visualization_tests.R
+      - name: Check release files before generating outputs
+        run: python3 scripts/check_public_release.py
+      - name: Run synthetic examples
+        run: |
+          Rscript run_analysis.R
+          Rscript scripts/run_functional_analysis.R

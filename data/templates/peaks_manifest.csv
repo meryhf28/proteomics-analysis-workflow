@@ -1,0 +1,5 @@
+sample_id,organism,condition,file
+S01,organism_A,control,data/raw/sample_01.xlsx
+S02,organism_A,control,data/raw/sample_02.xlsx
+S03,organism_A,treatment,data/raw/sample_03.xlsx
+S04,organism_A,treatment,data/raw/sample_04.xlsx

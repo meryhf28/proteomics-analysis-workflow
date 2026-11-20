@@ -1,0 +1,17 @@
+{
+  "title": "Proteomics Analysis Workflow in R",
+  "description": "Configurable R software for label-free differential protein-abundance analysis, optional PEAKS preprocessing, functional annotation integration and visualization. Includes synthetic example data and automated tests.",
+  "creators": [
+    {
+      "name": "Hernández-Fernández, María"
+    }
+  ],
+  "keywords": [
+    "proteomics",
+    "limma",
+    "R",
+    "reproducible research"
+  ],
+  "license": "MIT",
+  "upload_type": "software"
+}

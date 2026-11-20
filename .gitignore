@@ -1,0 +1,23 @@
+# Never commit original spectra, research workbooks or unpublished article data.
+.Rhistory
+.RData
+.Rproj.user/
+.Renviron
+.DS_Store
+*.Rproj
+*.log
+results/**
+!results/.gitkeep
+data/raw/**
+data/processed/**
+data/peaks_manifest.csv
+validation_private/**
+results_private/**
+*.xlsx
+*.xls
+*.fasta
+*.fastq
+*.bam
+*.pdf
+*.zip
+*.rar

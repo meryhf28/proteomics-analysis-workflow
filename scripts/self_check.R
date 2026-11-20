@@ -1,0 +1,12 @@
+# Non-statistical unit smoke tests. Run: Rscript scripts/self_check.R
+source('R/functions.R')
+A <- data.frame(accession=c('P1','P2'),description=c('a','b'),S01=c(10,20),S02=c(9,22),S03=c(100,50),S04=c(110,55),check.names=FALSE)
+M <- data.frame(sample_id=c('S01','S02','S03','S04'),organism='org',condition=c('ref','ref','trt','trt'))
+C <- data.frame(organism='org',reference='ref',treatment='trt')
+stopifnot(isTRUE(validate_tables(A,M,C,2)))
+stopifnot(inherits(try(validate_tables(A,M,C,3),silent=TRUE),'try-error'))
+set.seed(123)
+x<-matrix(c(1,2,NA,4,5,NA),nrow=3)
+y<-low_quantile_impute(x,c('A','B'),.01,.01)
+stopifnot(!anyNA(y),isTRUE(all.equal(x[!is.na(x)],y[!is.na(x)])))
+message('PASS: metadata validation and imputation smoke tests. Statistical end-to-end validation remains pending.')

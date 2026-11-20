@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "Please cite the archived software version used in your analysis when a DOI is available."
+title: "Proteomics Analysis Workflow in R"
+type: software
+authors:
+  - family-names: "Hernández-Fernández"
+    given-names: "María"
+version: "0.9.0-rc4"
+abstract: "Configurable R workflow for label-free differential protein abundance analysis, optional PEAKS import, sample-level heatmaps and curated functional category plots."
+keywords:
+  - proteomics
+  - differential protein abundance
+  - limma
+  - reproducible analysis
+  - R
+repository-code: "https://github.com/meryhf28/proteomics-analysis-workflow"
